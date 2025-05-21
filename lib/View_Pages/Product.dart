@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Provider/Service_Provider.dart';
 
 class Product_Screen extends StatefulWidget {
@@ -67,9 +66,7 @@ class _Product_ScreenState extends State<Product_Screen> {
                               ),
                             ),
                             onChanged: (value) {
-                              setState(() {
-                                // Trigger search/filter logic here
-                              });
+                              setState(() {});
                             },
                           ),
                         ),
@@ -110,7 +107,7 @@ class _Product_ScreenState extends State<Product_Screen> {
                                     children: [
                                       Text(product.title, style: TextStyle(color: Colors.white,fontWeight: FontWeight.w500,fontSize: 16),),
                                       Text(product.description,style: TextStyle(color: Colors.white,fontWeight: FontWeight.w400,fontSize: 13),),
-                                      Text("₹ ${product.price.toString()}",style: TextStyle(color: Colors.white,fontSize: 12),),
+                                      Text("₹ ${product.price.toString()}",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                                     ],
                                   ),
                                 ),

@@ -7,7 +7,6 @@ class SharedPrefsService {
 
   Future<void> saveProducts(ProductResponse response) async {
     final prefs = await SharedPreferences.getInstance();
-
     final List<String> encodedList = response.products
         .map((product) => jsonEncode(product.toJson()))
         .toList();
@@ -23,4 +22,5 @@ class SharedPrefsService {
         .map((productString) => Product.fromJson(jsonDecode(productString)))
         .toList();
   }
+
 }

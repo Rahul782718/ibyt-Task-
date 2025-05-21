@@ -1,10 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../Api_Response/Product_Response.dart';
 import '../Provider/Service_Provider.dart';
-import '../Provider/SharedPrefsService.dart';
 
 
 class Dashboard_Screen extends StatelessWidget {
@@ -61,10 +58,13 @@ class Dashboard_Screen extends StatelessWidget {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      child: CircleAvatar(
-                        radius: 25,
-                        backgroundColor: Colors.blueAccent,
-                        child:Text("₹ ${product.price.toString()}",style: TextStyle(color: Colors.white,fontSize: 12),),
+                      child: Padding(
+                        padding: const EdgeInsets.all(1.0),
+                        child: CircleAvatar(
+                          radius: 25,
+                          backgroundColor: Colors.blueAccent,
+                          child:Text("₹ ${product.price.toString()}",style: TextStyle(color: Colors.white,fontSize: MediaQuery.of(context).size.width * 0.035, fontWeight: FontWeight.bold),),
+                        ),
                       ),
                     )
                   ],

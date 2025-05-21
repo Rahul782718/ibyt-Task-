@@ -20,6 +20,7 @@ class ServiceProvider extends Base_View_Model {
 
   ServiceProvider() {
     _init();
+    _loadFromCache();
   }
 
   void _init() async {
@@ -31,6 +32,7 @@ class ServiceProvider extends Base_View_Model {
     });
   }
 
+
   Future<void> _checkAndLoadData() async {
     final connectivityResult = await _connectivity.checkConnectivity();
     if (connectivityResult != ConnectivityResult.none) {
@@ -40,6 +42,7 @@ class ServiceProvider extends Base_View_Model {
     }
   }
 
+  /// this is Fetch is Api
   Future<void> _fetchFromApi() async {
     setLoading(true);
     clearErrorMessage();
@@ -55,6 +58,7 @@ class ServiceProvider extends Base_View_Model {
     notifyListeners();
   }
 
+  /// this is fetch Local
   Future<void> _loadFromCache() async {
     final cached = await _prefs.getCachedProducts();
     if (cached.isNotEmpty) {
