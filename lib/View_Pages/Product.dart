@@ -26,9 +26,13 @@ class _Product_ScreenState extends State<Product_Screen> {
             return Center(child: Text(provider.errorMessage));
           } else if (provider.productResponse != null) {
 
+            /// this is fetch data
             final allProduct = provider.productResponse!.products;
+
+            /// this is search Query
             final query = _searchController.text.toLowerCase();
 
+            /// this is filter Product
             final filteredProducts = query.isEmpty
                 ? []
                 : allProduct.where((product) {
